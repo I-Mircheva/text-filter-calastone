@@ -28,10 +28,10 @@ namespace TextFilter.Tests
         public void Apply_InputStringWithVowels_Filtered()
         {
             var filter = new FilterMiddleVowel();
-            var text = new OutputText("Jo has a nice shotgun in his car. He never uses it on animals though. Only on monsters!");
+            var text = new OutputText("Jo has a nice shotmun in his car. He never uses it on animals though. Only on monsters!");
             var filteredText = filter.Apply(text);
 
-            Assert.AreEqual("    shotgun   .  never    animals . Only  monsters!", filteredText.text);
+            Assert.AreEqual("    shotmun   .  never    animals . Only  monsters!", filteredText.text);
         }
     }
 }

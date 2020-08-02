@@ -28,10 +28,10 @@ namespace TextFilter.Tests
         public void Apply_InputStringWithUnder3Letters_Filtered()
         {
             var filter = new FilterLengthThree();
-            var text = new OutputText("Jo has a nice shotgun");
+            var text = new OutputText("Jo has a nice shotfun");
             var filteredText = filter.Apply(text);
 
-            Assert.AreEqual(" has  nice shotgun", filteredText.text);
+            Assert.AreEqual(" has  nice shotfun", filteredText.text);
         }
     }
 }

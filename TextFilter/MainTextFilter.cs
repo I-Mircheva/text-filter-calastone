@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace TextFilter
 {
-    public class TextFilterRunner
+    public class MainTextFilter
     {
         public static void Main(string[] args)
         {

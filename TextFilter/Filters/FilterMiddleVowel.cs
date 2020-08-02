@@ -12,7 +12,7 @@ namespace TextFilter
         {
             string returnString = text.text;
             var words = Regex.Split(text.text, @"\W")
-            .Where(str => !String.IsNullOrEmpty(str)); // Regex //Newline messes up the count!
+            .Where(str => !String.IsNullOrEmpty(str)); //Empty string messes up the count!
             foreach (string word in words)
             {
                 int wordMiddleIndex = word.Length / 2;

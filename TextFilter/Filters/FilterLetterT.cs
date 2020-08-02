@@ -5,18 +5,17 @@ using System.Text.RegularExpressions;
 
 namespace TextFilter
 {
-    public class FilterLengthThree : FilterBase
+    public class FilterLetterT : FilterBase
     {
-        public FilterLengthThree() : base("FilterLengthThree") { }
+        public FilterLetterT() : base("FilterLetterT") { }
         public override OutputText Apply(OutputText text)
         {
             string returnString = text.text;
             var words = Regex.Split(text.text, @"\W")
-            .Where(str => !String.IsNullOrEmpty(str)); // Regex //Newline messes up the count!
-
+            .Where(str => !String.IsNullOrEmpty(str)); //Empty string messes up the count!
             foreach (string word in words)
             {
-                if (word.Length < 3)
+                if (word.Contains("t"))
                 {
                     // \b - word boundary, so it matches "in" in " in;" but not "in" in "beginning"
                     String regex = "\\b" + word + "\\b";
@@ -24,8 +23,7 @@ namespace TextFilter
                 }
             }
 
-            Console.WriteLine("Apply Three");
-            return new OutputText(returnString); ;
+            return new OutputText(returnString);
         }
     }
 }

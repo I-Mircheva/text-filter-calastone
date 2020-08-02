@@ -16,7 +16,6 @@ namespace TextFilter
             var outputText = new OutputText(text);
             foreach (FilterBase filter in filters)
             {
-                Console.WriteLine(outputText.text);
                 outputText = filter.Apply(outputText);
             }
             return outputText;
